@@ -5,25 +5,99 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import org.hibernate.boot.Metadata;
 
 @Document(collection = "event")
 public class Event {
+       @Id
+        private String id;
 
-    @Id
-    @GeneratedValue
-    private Long id;
+        private String eventType;
 
-    @Column
-    private Long userId;
+        private LocalDateTime timestamp;
 
-    @Column
-    private LocalDateTime timeStamp;
+        private String userId;
 
-    @Column
-    private int ipAdress;
+        private String source;
 
+        private Metadata metadata;
 
-    public Event(){
-        
-    }
+        private Object data;
+
+        public Event() {
+        }
+
+        public Event(
+                String id,
+                String eventType,
+                LocalDateTime timestamp,
+                String userId,
+                String source,
+                Metadata metadata,
+                Object data
+        ) {
+            this.id = id;
+            this.eventType = eventType;
+            this.timestamp = timestamp;
+            this.userId = userId;
+            this.source = source;
+            this.metadata = metadata;
+            this.data = data;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getEventType() {
+            return eventType;
+        }
+
+        public void setEventType(String eventType) {
+            this.eventType = eventType;
+        }
+
+        public LocalDateTime getTimestamp() {
+            return timestamp;
+        }
+
+        public void setTimestamp(LocalDateTime timestamp) {
+            this.timestamp = timestamp;
+        }
+
+        public String getUserId() {
+            return userId;
+        }
+
+        public void setUserId(String userId) {
+            this.userId = userId;
+        }
+
+        public String getSource() {
+            return source;
+        }
+
+        public void setSource(String source) {
+            this.source = source;
+        }
+
+        public Metadata getMetadata() {
+            return metadata;
+        }
+
+        public void setMetadata(Metadata metadata) {
+            this.metadata = metadata;
+        }
+
+        public Object getData() {
+            return data;
+        }
+
+        public void setData(Object data) {
+            this.data = data;
+        }
 }
