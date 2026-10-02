@@ -1,4 +1,4 @@
-package com.boitenoire.model;
+package com.boitenoire.Model;
 
 public class LoginData {
 
@@ -15,6 +15,7 @@ public class LoginData {
         }
 
         public boolean isSuccess() {
+
             return success;
         }
 

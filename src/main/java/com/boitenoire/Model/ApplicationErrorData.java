@@ -1,4 +1,4 @@
-package com.boitenoire.model;
+package com.boitenoire.Model;
 
 public class ApplicationErrorData {
     private String errorCode;
